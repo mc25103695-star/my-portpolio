@@ -1,0 +1,2900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0b0e14" />
+
+<title>Omkar Chandrakant Kharat | Cybersecurity &amp; Threat Intelligence Specialist</title>
+<meta name="description" content="Portfolio of Omkar Chandrakant Kharat — Cybersecurity practitioner, MCA candidate, creator of AbuseBox (open-source threat monitoring) and AI-driven SOC defense tooling." />
+<meta name="author" content="Omkar Chandrakant Kharat" />
+<link rel="canonical" href="https://github.com/mc25103695-star" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Omkar Chandrakant Kharat — Cybersecurity &amp; Threat Intelligence" />
+<meta property="og:description" content="Open-source threat monitoring, SOC automation, malware analysis, and AI-assisted defensive pipelines." />
+<meta property="og:image" content="https://github.com/mc25103695-star" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0e14'/%3E%3Cpath d='M32 10 L50 18 V32 C50 44 42 52 32 56 C22 52 14 44 14 32 V18 Z' fill='none' stroke='%2338bdf8' stroke-width='3' stroke-linejoin='round'/%3E%3Cpath d='M25 32 L30 37 L39 27' fill='none' stroke='%2334d399' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+<!-- Typography: Newsreader for editorial headlines, Plus Jakarta Sans for UI, JetBrains Mono for telemetry/code -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES / TOKENS
+   ========================================================================== */
+:root {
+  --bg-base: #07090e;
+  --bg-surface: #0d1117;
+  --bg-surface-elevated: #131923;
+  --bg-surface-card: #0f141d;
+  --bg-surface-hover: #171f2d;
+  
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-bright: rgba(56, 189, 248, 0.35);
+
+  --text-primary: #f0f3f8;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --text-muted: #475569;
+
+  --accent-cyan: #38bdf8;
+  --accent-cyan-glow: rgba(56, 189, 248, 0.12);
+  --accent-emerald: #34d399;
+  --accent-emerald-glow: rgba(52, 211, 153, 0.12);
+  --accent-amber: #fbbf24;
+  --accent-amber-glow: rgba(251, 191, 36, 0.12);
+  --accent-violet: #a78bfa;
+  --accent-rose: #f87171;
+
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --nav-h: 70px;
+  --max-w: 1180px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESET & CORE
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 24px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.08), transparent 70%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 64px 64px, 64px 64px;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.25);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg {
+  display: block;
+}
+
+.mono { font-family: var(--font-mono); }
+.serif { font-family: var(--font-serif); }
+
+.container {
+  width: min(100% - 2.5rem, var(--max-w));
+  margin-inline: auto;
+}
+
+/* Section Architecture */
+section {
+  padding: clamp(5rem, 8vw, 7.5rem) 0;
+  position: relative;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-cyan);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--accent-cyan-glow);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  margin-bottom: 1.1rem;
+}
+
+.section-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+}
+
+.sec-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.sec-title em {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.sec-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 620px;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(7, 9, 14, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  background: rgba(7, 9, 14, 0.95);
+  border-color: var(--border-medium);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-shield {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #172437, #0b111c);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  display: grid;
+  place-items: center;
+  color: var(--accent-cyan);
+}
+
+.brand-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.brand-handle {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+  color: var(--accent-cyan);
+  background: var(--accent-cyan-glow);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-cmd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  transition: var(--transition);
+}
+
+.btn-cmd:hover {
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+}
+
+.kbd {
+  font-size: 0.68rem;
+  padding: 0.15rem 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+}
+
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.48rem 1rem;
+  border-radius: var(--radius-full);
+  background: var(--accent-cyan);
+  color: #041019;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-resume:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -6px rgba(56, 189, 248, 0.6);
+  background: #7dd3fc;
+}
+
+.mobile-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  place-items: center;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  min-height: calc(100vh - var(--nav-h));
+  padding-top: calc(var(--nav-h) + 2.5rem);
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  color: var(--accent-emerald);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 10px var(--accent-emerald);
+  animation: pulseLive 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulseLive {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.7rem, 6.2vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.hero-headline .highlight {
+  color: var(--accent-cyan);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-subhead {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 2rem;
+}
+
+.hero-subhead strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.78rem 1.6rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--accent-cyan), #0284c7);
+  color: #041019;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: var(--transition);
+  box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.5);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -10px rgba(56, 189, 248, 0.7);
+  color: #041019;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.78rem 1.4rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-secondary);
+  background: var(--bg-surface-elevated);
+  transform: translateY(-2px);
+}
+
+.hero-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.metric-lbl {
+  font-size: 0.76rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+
+/* Hero Terminal Preview Box */
+.terminal-window {
+  background: var(--bg-surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.03);
+  position: relative;
+}
+
+.terminal-header {
+  background: #090c12;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.terminal-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.terminal-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #f59e0b; }
+.dot-green { background: #10b981; }
+
+.terminal-title {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.terminal-body {
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.term-cmd {
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.term-cmd::before {
+  content: "$";
+  color: var(--accent-emerald);
+}
+
+.term-card-box {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  margin-top: 0.6rem;
+}
+
+.term-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+}
+.term-row:last-child { border-bottom: none; }
+
+.term-badge-ok { color: var(--accent-emerald); font-weight: 600; }
+.term-badge-warn { color: var(--accent-amber); font-weight: 600; }
+.term-badge-bad { color: var(--accent-rose); font-weight: 600; }
+
+.term-interactive-prompt {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.term-interactive-prompt input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.term-interactive-prompt input::placeholder {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   FEATURED PROJECT: ABUSEBOX SPOTLIGHT
+   ========================================================================== */
+.spotlight-card {
+  background: linear-gradient(170deg, var(--bg-surface-elevated) 0%, var(--bg-surface-card) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.9);
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-emerald), transparent);
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.spotlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-emerald);
+  background: var(--accent-emerald-glow);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  margin-bottom: 0.9rem;
+}
+
+.spotlight-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.spotlight-version {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-cyan);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: var(--accent-cyan-glow);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.spotlight-desc {
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.feature-bullets {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+
+.feature-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.feature-bullets li svg {
+  width: 17px;
+  height: 17px;
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.feature-bullets li strong {
+  color: var(--text-primary);
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.8rem;
+}
+
+.tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+.spotlight-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Architecture Blueprint Graphic */
+.blueprint-card {
+  background: #090d14;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  position: relative;
+}
+
+.blueprint-card::after {
+  content: "ARCHITECTURE // OVERVIEW";
+  position: absolute;
+  top: 0.65rem;
+  right: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.arch-node {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.arch-node-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arch-node-desc {
+  font-size: 0.74rem;
+  color: var(--text-tertiary);
+  margin-top: 0.2rem;
+}
+
+.arch-connector {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  margin: -0.2rem 0 0.5rem;
+}
+
+/* ==========================================================================
+   PROJECTS SECTION (GRID)
+   ========================================================================== */
+.projects-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  padding: 0.3rem;
+  border-radius: var(--radius-full);
+}
+
+.filter-btn {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--accent-cyan);
+  color: #041019;
+  font-weight: 600;
+}
+
+.project-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-item {
+  background: var(--bg-surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.project-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.project-item.hidden {
+  display: none;
+}
+
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.project-cat-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-cyan);
+}
+
+.project-year {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.project-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+
+.project-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.project-bullets-small {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1.3rem;
+}
+
+.project-bullets-small li {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.project-bullets-small li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-cyan);
+}
+
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: auto;
+}
+
+.project-link-out {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  transition: var(--transition);
+}
+
+.project-link-out:hover {
+  color: #fff;
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   INTERACTIVE SOC INVESTIGATION LAB (DEMO)
+   ========================================================================== */
+.soc-lab-container {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+}
+
+.soc-lab-toolbar {
+  background: #090c12;
+  padding: 0.9rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.soc-lab-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-grow: 1;
+  max-width: 500px;
+}
+
+.soc-lab-input {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--text-primary);
+  outline: none;
+  transition: var(--transition);
+}
+
+.soc-lab-input:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 2px var(--accent-cyan-glow);
+}
+
+.soc-preset-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.preset-chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.preset-chip:hover {
+  background: var(--accent-cyan-glow);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+.soc-lab-output {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  background: var(--bg-surface-card);
+}
+
+.dossier-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dossier-header-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.target-badge {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.severity-pill {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.severity-malicious {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--accent-rose);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.severity-clean {
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.severity-suspicious {
+  background: rgba(251, 191, 36, 0.12);
+  color: var(--accent-amber);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.dossier-cell {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+}
+
+.dossier-cell .lbl {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.dossier-cell .val {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+}
+
+.dossier-ai-summary {
+  background: rgba(56, 189, 248, 0.04);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.dossier-ai-summary h4 {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dossier-ai-summary p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.dnsbl-feed-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-header {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed-list {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.feed-item {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.35rem 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   TECHNICAL SKILLS MATRIX
+   ========================================================================== */
+.skills-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category-card {
+  background: var(--bg-surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 1.7rem;
+  transition: var(--transition);
+}
+
+.skill-category-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-3px);
+}
+
+.skill-cat-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.skill-cat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  display: grid;
+  place-items: center;
+  color: var(--accent-cyan);
+}
+
+.skill-cat-head h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-items-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.skill-chip {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.skill-chip:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.skill-chip.featured {
+  background: var(--accent-cyan-glow);
+  color: var(--accent-cyan);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+/* ==========================================================================
+   ABOUT & EDUCATION SECTION
+   ========================================================================== */
+.about-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+}
+
+.bio-card {
+  background: var(--bg-surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.bio-p {
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.bio-p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.contact-quick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* Timeline */
+.edu-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.edu-timeline::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--border-medium);
+}
+
+.timeline-entry {
+  position: relative;
+  padding-left: 3.2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 2px solid var(--accent-cyan);
+  display: grid;
+  place-items: center;
+}
+
+.timeline-dot::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+}
+
+.timeline-card {
+  background: var(--bg-surface-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+}
+
+.timeline-period {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-inst {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.timeline-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-amber-glow);
+  color: var(--accent-amber);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.languages-box {
+  margin-top: 1.8rem;
+  padding: 1.2rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.languages-box h5 {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.8rem;
+}
+
+.lang-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.lang-tag {
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+}
+
+.lang-tag b {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.contact-container-box {
+  background: linear-gradient(180deg, var(--bg-surface-card) 0%, var(--bg-surface) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+}
+
+.contact-info-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-method-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition);
+}
+
+.contact-method-card:hover {
+  border-color: var(--border-bright);
+  transform: translateX(4px);
+}
+
+.contact-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-cyan-glow);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  display: grid;
+  place-items: center;
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.contact-details {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.contact-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.15rem;
+}
+
+.contact-val {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-copy {
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-tertiary);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  transition: var(--transition);
+}
+
+.btn-copy:hover {
+  background: var(--accent-cyan-glow);
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+}
+
+/* Contact Form */
+.contact-form-clean {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.92rem;
+  transition: var(--transition);
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px var(--accent-cyan-glow);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-status {
+  font-size: 0.85rem;
+  min-height: 1.3em;
+}
+.form-status.success { color: var(--accent-emerald); }
+.form-status.error { color: var(--accent-rose); }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 3.5rem 0 2.5rem;
+  background: #05070a;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand h4 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.footer-brand p {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.social-circle-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  display: grid;
+  place-items: center;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.social-circle-link:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   COMMAND PALETTE MODAL
+   ========================================================================== */
+.cmd-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 12, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.cmd-modal-backdrop.open {
+  display: grid;
+}
+
+.cmd-modal {
+  width: min(100%, 580px);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+  animation: modalIn 0.18s ease-out;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(-10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.cmd-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.cmd-input-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.cmd-list {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.cmd-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cmd-item:hover, .cmd-item.selected {
+  background: var(--bg-surface-hover);
+  color: var(--text-primary);
+}
+
+.cmd-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-cyan);
+}
+
+.cmd-footer {
+  padding: 0.6rem 1rem;
+  background: #090c12;
+  border-top: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .soc-lab-output {
+    grid-template-columns: 1fr;
+  }
+  .about-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: grid;
+  }
+  .hero-metrics-strip {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+  .dossier-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================================================
+     NAVBAR
+     ========================================================================== -->
+<header class="navbar" id="navbar">
+  <div class="container nav-wrap">
+    <a href="#hero" class="brand-link" aria-label="Omkar Kharat Homepage">
+      <div class="brand-shield" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="brand-meta">
+        <span class="brand-name">Omkar Kharat</span>
+        <span class="brand-handle">SOC // Threat Intelligence</span>
+      </div>
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#spotlight" class="nav-link">AbuseBox</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#lab" class="nav-link">SOC Simulator</a></li>
+        <li><a href="#skills" class="nav-link">Arsenal</a></li>
+        <li><a href="#about" class="nav-link">Background</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn-cmd" id="openCmdBtn" aria-label="Open command palette">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>Search</span>
+        <span class="kbd">⌘K</span>
+      </button>
+
+      <a href="assets/omkar-kharat-resume.pdf" class="btn-resume" download="Omkar-Kharat-Cybersecurity-Resume.pdf" aria-label="Download Omkar Kharat Resume">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>CV / Resume</span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ==========================================================================
+     HERO SECTION
+     ========================================================================== -->
+<section class="hero-section" id="hero">
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="hero-telemetry-badge">
+        <span class="live-dot"></span>
+        <span>OPEN TO ROLES: SOC ANALYST (L1/L2) &amp; SECURITY ENGINEER</span>
+      </div>
+
+      <h1 class="hero-headline">
+        Detecting threats.<br>
+        Engineering <span class="highlight">defensive tools</span> that scale.
+      </h1>
+
+      <p class="hero-subhead">
+        Hi, I'm <strong>Omkar Chandrakant Kharat</strong> — an MCA candidate &amp; cybersecurity tool builder in Mumbai.
+        Creator of <strong>AbuseBox</strong>, multi-source threat intelligence pipelines, and automated SOC investigation assistants.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#spotlight" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span>Explore AbuseBox</span>
+        </a>
+        <a href="#lab" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Test Interactive SOC Lab</span>
+        </a>
+      </div>
+
+      <div class="hero-metrics-strip">
+        <div class="metric-item">
+          <span class="metric-val">60+</span>
+          <span class="metric-lbl">DNSBL Feeds Monitored</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-val">5 Releases</span>
+          <span class="metric-lbl">Shipped on GitHub</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-val">&lt; 1.2s</span>
+          <span class="metric-lbl">Concurrent Threat Ingestion</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-val">7.74</span>
+          <span class="metric-lbl">BMS Degree CGPA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Terminal Simulator Preview -->
+    <div class="hero-right">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot-red"></span>
+            <span class="dot-yellow"></span>
+            <span class="dot-green"></span>
+          </div>
+          <div class="terminal-title">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            <span>abusebox-core :: telemetry-probe v1.1.2</span>
+          </div>
+        </div>
+        <div class="terminal-body">
+          <div class="term-cmd">abusebox scan --target 185.220.101.5 --deep-dnsbl</div>
+          <p style="color:var(--text-tertiary); font-size:0.75rem;">[+] Resolving rDNS and autonomous system metadata...</p>
+          <p style="color:var(--text-tertiary); font-size:0.75rem;">[+] Executing 64 DNSBL provider lookups concurrently via dnspython...</p>
+          
+          <div class="term-card-box">
+            <div class="term-row">
+              <span>TARGET IP</span>
+              <span class="mono" style="color:var(--accent-cyan)">185.220.101.5</span>
+            </div>
+            <div class="term-row">
+              <span>ASN / CARRIER</span>
+              <span>AS208294 (Tor Exit Node)</span>
+            </div>
+            <div class="term-row">
+              <span>DNSBL STATUS</span>
+              <span class="term-badge-bad">LISTED (7/64 FEEDS)</span>
+            </div>
+            <div class="term-row">
+              <span>ABUSEIPDB SCORE</span>
+              <span class="term-badge-bad">100% CONFIDENCE</span>
+            </div>
+            <div class="term-row">
+              <span>AI THREAT SUMMARY</span>
+              <span style="color:#e2e8f0;">Active Scanner / Proxy Anonymizer</span>
+            </div>
+          </div>
+
+          <div class="term-interactive-prompt">
+            <span style="color:var(--accent-cyan);">$</span>
+            <input type="text" id="heroTermInput" value="abusebox scan --ip 8.8.8.8" aria-label="Terminal prompt input" readonly />
+            <span style="font-size:0.7rem; color:var(--text-muted);">[LIVE DEMO BELOW]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FLAGSHIP SPOTLIGHT: ABUSEBOX
+     ========================================================================== -->
+<section id="spotlight">
+  <div class="container">
+    <div class="section-tag">Flagship Open-Source Engineering</div>
+    
+    <div class="spotlight-card">
+      <div class="spotlight-grid">
+        <div class="spotlight-info">
+          <span class="spotlight-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Production Ready · Self-Hosted
+          </span>
+
+          <h2 class="spotlight-title">
+            AbuseBox
+            <span class="spotlight-version">v1.1.2</span>
+          </h2>
+
+          <p class="spotlight-desc">
+            A comprehensive, open-source threat monitoring toolkit designed for SOC analysts, system administrators, and security teams.
+            Consolidates real-time reputation scoring, email spoofing checks, and network perimeter telemetry into a single, dockerized pane of glass.
+          </p>
+
+          <ul class="feature-bullets">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>60+ DNSBL Blacklist Providers</strong> checked in sub-second asynchronous passes.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Subnet /24 &amp; Bulk Checks:</strong> Analyze entire network blocks or up to 20 assets at once.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Email Hygiene Validation:</strong> Automated SPF, DKIM, and DMARC enforcement auditing.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Automated Background Monitoring:</strong> Scheduled cron checks with email &amp; webhook dispatch.</span>
+            </li>
+          </ul>
+
+          <div class="tech-pills">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">FastAPI</span>
+            <span class="tech-pill">React 18</span>
+            <span class="tech-pill">Docker Compose</span>
+            <span class="tech-pill">dnspython</span>
+            <span class="tech-pill">SQLite / SQLAlchemy</span>
+            <span class="tech-pill">JWT Security</span>
+          </div>
+
+          <div class="spotlight-actions">
+            <a href="https://github.com/mc25103695-star/abusebox" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.9 5.33.9 11.6c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-1.94c-3.17.69-3.84-1.53-3.84-1.53-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 2.86-.38c.97 0 1.95.13 2.86.38 2.18-1.48 3.13-1.17 3.13-1.17.63 1.57.24 2.73.12 3.02.74.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.22 5.64.41.35.78 1.05.78 2.12v3.14c0 .3.2.66.79.55A11.1 11.1 0 0 0 23.1 11.6C23.1 5.33 18.27.5 12 .5z"/></svg>
+              <span>View GitHub Repository</span>
+            </a>
+            <span style="font-size:0.8rem; color:var(--text-tertiary); font-family:var(--font-mono);">License: MIT · Self-Hostable</span>
+          </div>
+        </div>
+
+        <!-- Architecture Flow Representation -->
+        <div class="blueprint-card">
+          <div class="arch-node">
+            <div class="arch-node-title">
+              <span>INGESTION &amp; CLIENT</span>
+              <span class="mono" style="color:var(--accent-emerald);">REACT 18 SPA</span>
+            </div>
+            <p class="arch-node-desc">Single IP, CIDR block, or domain target inputs with JWT auth</p>
+          </div>
+
+          <div class="arch-connector">│ async REST / SSE dispatch</div>
+
+          <div class="arch-node">
+            <div class="arch-node-title">
+              <span>SCAN ENGINE</span>
+              <span class="mono" style="color:var(--accent-cyan);">FASTAPI WORKERS</span>
+            </div>
+            <p class="arch-node-desc">Concurrent DNS resolution (dnspython) across 60+ DNSBL servers</p>
+          </div>
+
+          <div class="arch-connector">│ parallel intelligence enrichment</div>
+
+          <div class="arch-node">
+            <div class="arch-node-title">
+              <span>EXTERNAL REPUTATION</span>
+              <span class="mono" style="color:var(--accent-amber);">ABUSEIPDB &amp; WHOIS</span>
+            </div>
+            <p class="arch-node-desc">SSL validity checks, SPF/DKIM/DMARC parser, and ISP attribution</p>
+          </div>
+
+          <div class="arch-connector">│ automated alerts</div>
+
+          <div class="arch-node">
+            <div class="arch-node-title">
+              <span>PERSISTENCE &amp; DISPATCH</span>
+              <span class="mono">SQLITE + WEBHOOKS</span>
+            </div>
+            <p class="arch-node-desc">Audit historical blacklist trend charts, CSV exports, Slack/Email triggers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     INTERACTIVE SOC INVESTIGATION LAB (DEMO)
+     ========================================================================== -->
+<section id="lab">
+  <div class="container">
+    <div class="section-tag">Interactive Threat Intelligence Sandbox</div>
+    <h2 class="sec-title">SOC Analyst <em>Investigation Console</em></h2>
+    <p class="sec-desc">Test the live analysis heuristics built into my tooling. Click a sample IOC or enter any IP to see aggregated reputation scoring, DNSBL query results, and automated mitigation suggestions.</p>
+
+    <div class="soc-lab-container" style="margin-top: 2rem;">
+      <div class="soc-lab-toolbar">
+        <div class="soc-lab-input-group">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-tertiary);"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="iocInput" class="soc-lab-input" placeholder="Enter IP or Domain (e.g. 185.220.101.5)" value="185.220.101.5" aria-label="Enter IP or Domain to analyze" />
+          <button class="btn-primary" id="runScanBtn" style="padding:0.48rem 1rem; font-size:0.8rem;">
+            Analyze IOC
+          </button>
+        </div>
+
+        <div class="soc-preset-chips">
+          <span style="font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono);">Presets:</span>
+          <button class="preset-chip" data-ip="185.220.101.5">Tor Exit Node</button>
+          <button class="preset-chip" data-ip="45.143.200.12">CobaltStrike C2</button>
+          <button class="preset-chip" data-ip="8.8.8.8">Google DNS (Clean)</button>
+        </div>
+      </div>
+
+      <div class="soc-lab-output">
+        <div class="dossier-main">
+          <div class="dossier-header-strip">
+            <div>
+              <span style="font-size:0.7rem; color:var(--text-tertiary); font-family:var(--font-mono);">CURRENT ARTIFACT</span>
+              <div class="target-badge" id="dossierTarget">185.220.101.5</div>
+            </div>
+            <div id="dossierSeverity" class="severity-pill severity-malicious">MALICIOUS // HIGH RISK</div>
+          </div>
+
+          <div class="dossier-grid">
+            <div class="dossier-cell">
+              <div class="lbl">Autonomous System (ASN)</div>
+              <div class="val" id="dossierAsn">AS208294 (Zwiebelfreunde e.V.)</div>
+            </div>
+            <div class="dossier-cell">
+              <div class="lbl">Geolocation / Country</div>
+              <div class="val" id="dossierGeo">Germany (DE) - Frankfurt</div>
+            </div>
+            <div class="dossier-cell">
+              <div class="lbl">AbuseIPDB Confidence</div>
+              <div class="val" id="dossierConfidence" style="color:var(--accent-rose);">100% (2,410 reports)</div>
+            </div>
+            <div class="dossier-cell">
+              <div class="lbl">DNSBL Detections</div>
+              <div class="val" id="dossierDnsblCount" style="color:var(--accent-rose);">7 of 64 Providers Listed</div>
+            </div>
+          </div>
+
+          <div class="dossier-ai-summary">
+            <h4>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              <span>Automated Threat Intelligence Briefing</span>
+            </h4>
+            <p id="dossierNarrative">
+              Target IP is an established Tor exit node observed conducting brute-force attempts and credential stuffing campaigns against SSH/HTTPS services. Recommended immediate SOC action: Apply perimeter firewall DROP rules and correlate against internal auth logs for session anomalies.
+            </p>
+          </div>
+        </div>
+
+        <div class="dnsbl-feed-panel">
+          <div class="feed-header">
+            <span>DNSBL Providers</span>
+            <span id="feedSummary">7 / 64 HIT</span>
+          </div>
+          <ul class="feed-list" id="dnsblFeedList">
+            <li class="feed-item"><span>zen.spamhaus.org</span><span class="term-badge-bad">LISTED</span></li>
+            <li class="feed-item"><span>b.barracudacentral.org</span><span class="term-badge-bad">LISTED</span></li>
+            <li class="feed-item"><span>bl.spamcop.net</span><span class="term-badge-bad">LISTED</span></li>
+            <li class="feed-item"><span>dnsbl.sorbs.net</span><span class="term-badge-bad">LISTED</span></li>
+            <li class="feed-item"><span>ips.backscatterer.org</span><span class="term-badge-ok">CLEAN</span></li>
+            <li class="feed-item"><span>cbl.abuseat.org</span><span class="term-badge-bad">LISTED</span></li>
+            <li class="feed-item"><span>pbl.spamhaus.org</span><span class="term-badge-bad">LISTED</span></li>
+            <li class="feed-item"><span>dnsbl-1.uceprotect.net</span><span class="term-badge-bad">LISTED</span></li>
+            <li class="feed-item"><span>hostkarma.junkemailfilter.com</span><span class="term-badge-ok">CLEAN</span></li>
+            <li class="feed-item"><span>db.wpbl.info</span><span class="term-badge-ok">CLEAN</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PROJECTS PORTFOLIO
+     ========================================================================== -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-header-row">
+      <div>
+        <div class="section-tag">Engineering Portfolio</div>
+        <h2 class="sec-title">Featured <em>Projects</em></h2>
+        <p class="sec-desc">Security monitoring tooling, AI-assisted threat intelligence pipelines, and data systems engineered with production standards.</p>
+      </div>
+
+      <div class="filter-tabs" role="tablist" aria-label="Project category filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="cyber" role="tab" aria-selected="false">Cybersecurity</button>
+        <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">AI / LLM Defense</button>
+        <button class="filter-btn" data-filter="data" role="tab" aria-selected="false">Data &amp; Systems</button>
+      </div>
+    </div>
+
+    <div class="project-cards-grid" id="projectGrid">
+
+      <!-- Project 1: AI Threat Intelligence Assistant -->
+      <article class="project-item" data-category="cyber ai">
+        <div class="project-card-top">
+          <span class="project-cat-tag">Cybersecurity · GenAI</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3>AI Threat Intelligence Assistant</h3>
+        <p class="project-desc">
+          Automated multi-source threat triage tool. Concurrently aggregates intelligence from VirusTotal and AbuseIPDB, feeding normalized telemetry into Google Gemini 2.5 Flash for analyst-ready SOC reports.
+        </p>
+        <ul class="project-bullets-small">
+          <li>Concurrent async aggregation from VirusTotal and AbuseIPDB REST APIs.</li>
+          <li>Google Gemini 2.5 Flash with strict JSON schema response validation.</li>
+          <li>Engineered a deterministic fallback engine so lookups never fail during rate limits.</li>
+          <li>Splunk/Falcon-inspired telemetry dashboard with color-coded severity.</li>
+        </ul>
+        <div class="tech-pills">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">FastAPI</span>
+          <span class="tech-pill">Google Gemini</span>
+          <span class="tech-pill">VirusTotal API</span>
+          <span class="tech-pill">AbuseIPDB</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-size:0.75rem; color:var(--text-tertiary); font-family:var(--font-mono);">SOC-grade triage</span>
+          <a href="https://github.com/mc25103695-star/ai-threat-intelligence-assistant" target="_blank" rel="noopener noreferrer" class="project-link-out">
+            <span>Source Code</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2: Spyware Analysis Tool -->
+      <article class="project-item" data-category="cyber">
+        <div class="project-card-top">
+          <span class="project-cat-tag">Malware Mechanics · Defense</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3>Spyware Analysis Tool (Educational)</h3>
+        <p class="project-desc">
+          Python-based spyware simulation developed for educational defense research. Uncovers how real-world stealer malware hooks into keyboard inputs, intercepts clipboards, and extracts browser data.
+        </p>
+        <ul class="project-bullets-small">
+          <li>Keylogging and clipboard monitoring telemetry mechanics.</li>
+          <li>System reconnaissance: OS fingerprinting, IP attribution, and host audits.</li>
+          <li>Simulated exfiltration mapping to formulate endpoint EDR detection rules.</li>
+          <li>Documented attack paths to raise awareness against credential stealers.</li>
+        </ul>
+        <div class="tech-pills">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">WinAPI / Hooking</span>
+          <span class="tech-pill">Endpoint Defense</span>
+          <span class="tech-pill">Security Research</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-size:0.75rem; color:var(--accent-amber); font-family:var(--font-mono);">Educational Research</span>
+          <a href="https://github.com/mc25103695-star/Spyware" target="_blank" rel="noopener noreferrer" class="project-link-out">
+            <span>Source Code</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3: Autonomous Data Scientist Agent -->
+      <article class="project-item" data-category="ai">
+        <div class="project-card-top">
+          <span class="project-cat-tag">Agentic RAG · Systems</span>
+          <span class="project-year">2026</span>
+        </div>
+        <h3>Autonomous Data Scientist Agent</h3>
+        <p class="project-desc">
+          Containerized autonomous agent executing the Agentic RAG pattern. Dynamically writes and executes data analysis Python scripts, queries FAISS vector indices, and searches live web data.
+        </p>
+        <ul class="project-bullets-small">
+          <li>Live Python script generation and sandboxed execution with chart rendering.</li>
+          <li>FAISS vector index for deep document and forensic report Q&amp;A.</li>
+          <li>DuckDuckGo live web search integration for real-time intelligence feeds.</li>
+          <li>Persistent conversational memory backed by Supabase PostgreSQL.</li>
+        </ul>
+        <div class="tech-pills">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">LangChain</span>
+          <span class="tech-pill">FAISS</span>
+          <span class="tech-pill">Supabase</span>
+          <span class="tech-pill">Docker</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-size:0.75rem; color:var(--text-tertiary); font-family:var(--font-mono);">Agentic RAG</span>
+          <a href="https://github.com/mc25103695-star/agentic-rag-data-analyst" target="_blank" rel="noopener noreferrer" class="project-link-out">
+            <span>Source Code</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4: Real-Time Crypto Analytics System -->
+      <article class="project-item" data-category="data">
+        <div class="project-card-top">
+          <span class="project-cat-tag">Data Engineering · ETL</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3>Real-Time Crypto Analytics Pipeline</h3>
+        <p class="project-desc">
+          Automated ETL pipeline ingesting high-frequency market data into a PostgreSQL relational store, feeding an interactive Streamlit analytics dashboard deployed to production.
+        </p>
+        <ul class="project-bullets-small">
+          <li>APScheduler automated ingestion at 1–5 minute intervals from CoinGecko.</li>
+          <li>End-to-end data pipeline: ingestion → sanitization → PostgreSQL storage.</li>
+          <li>Interactive Streamlit dashboard visualizing price volatility and volume trends.</li>
+          <li>Production deployment on Render with automated database migrations.</li>
+        </ul>
+        <div class="tech-pills">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">SQLAlchemy</span>
+          <span class="tech-pill">Streamlit</span>
+          <span class="tech-pill">Pandas</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-size:0.75rem; color:var(--text-tertiary); font-family:var(--font-mono);">Production ETL</span>
+          <a href="https://github.com/mc25103695-star/real-time-crypto-analytics" target="_blank" rel="noopener noreferrer" class="project-link-out">
+            <span>Source Code</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 5: AI Resume Ranking System -->
+      <article class="project-item" data-category="ai data">
+        <div class="project-card-top">
+          <span class="project-cat-tag">Machine Learning · NLP</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h3>AI Resume Screening &amp; Ranking System</h3>
+        <p class="project-desc">
+          Automated candidate screening system employing TF-IDF vectorization and an XGBoost classification model. Eliminates feature mismatch between training and inference pipelines.
+        </p>
+        <ul class="project-bullets-small">
+          <li>Unified feature extraction pipeline combining TF-IDF and structured metadata.</li>
+          <li>PDF parsing engine with regex-based skill and education extraction.</li>
+          <li>XGBoost candidate ranking engine with explainable scoring heuristics.</li>
+          <li>FastAPI backend paired with an intuitive Streamlit recruiter interface.</li>
+        </ul>
+        <div class="tech-pills">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">XGBoost</span>
+          <span class="tech-pill">Scikit-learn</span>
+          <span class="tech-pill">FastAPI</span>
+          <span class="tech-pill">PyPDF2</span>
+        </div>
+        <div class="project-footer">
+          <span style="font-size:0.75rem; color:var(--text-tertiary); font-family:var(--font-mono);">ML Pipeline</span>
+          <a href="https://github.com/mc25103695-star/ai-resume-ranking-system" target="_blank" rel="noopener noreferrer" class="project-link-out">
+            <span>Source Code</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     TECHNICAL SKILLS MATRIX
+     ========================================================================== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-tag">Security &amp; Development Arsenal</div>
+    <h2 class="sec-title">Technical <em>Competencies</em></h2>
+    <p class="sec-desc">A pragmatic, defensive skillset spanning threat monitoring, network forensics, modern API development, and automated incident triage.</p>
+
+    <div class="skills-matrix-grid" style="margin-top:2.5rem;">
+      <div class="skill-category-card">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Cybersecurity &amp; SOC</h3>
+        </div>
+        <div class="skill-items-list">
+          <span class="skill-chip featured">DNSBL Blacklist Monitoring</span>
+          <span class="skill-chip featured">IP Reputation Analysis</span>
+          <span class="skill-chip">WHOIS / DNS Forensics</span>
+          <span class="skill-chip">SSL / TLS Inspection</span>
+          <span class="skill-chip featured">SPF / DKIM / DMARC</span>
+          <span class="skill-chip">Threat Intelligence (OSINT)</span>
+          <span class="skill-chip">Malware Behavior Analysis</span>
+          <span class="skill-chip">Network Reconnaissance</span>
+          <span class="skill-chip">SOC Triage Workflows</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Programming &amp; Data</h3>
+        </div>
+        <div class="skill-items-list">
+          <span class="skill-chip featured">Python (Advanced)</span>
+          <span class="skill-chip">JavaScript (ES6+)</span>
+          <span class="skill-chip">SQL (PostgreSQL, SQLite)</span>
+          <span class="skill-chip">HTML5 &amp; Modern CSS</span>
+          <span class="skill-chip">REST API Design</span>
+          <span class="skill-chip">Pandas &amp; NumPy</span>
+          <span class="skill-chip">Regex Pattern Matching</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3>Backend &amp; Frameworks</h3>
+        </div>
+        <div class="skill-items-list">
+          <span class="skill-chip featured">FastAPI</span>
+          <span class="skill-chip">Pydantic</span>
+          <span class="skill-chip">SQLAlchemy</span>
+          <span class="skill-chip featured">dnspython</span>
+          <span class="skill-chip">httpx / Requests</span>
+          <span class="skill-chip">React 18</span>
+          <span class="skill-chip">Streamlit</span>
+          <span class="skill-chip">LangChain</span>
+        </div>
+      </div>
+
+      <div class="skill-category-card">
+        <div class="skill-cat-head">
+          <div class="skill-cat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3>AI, APIs &amp; DevOps</h3>
+        </div>
+        <div class="skill-items-list">
+          <span class="skill-chip featured">Google Gemini 2.5 Flash</span>
+          <span class="skill-chip featured">VirusTotal API v3</span>
+          <span class="skill-chip featured">AbuseIPDB API</span>
+          <span class="skill-chip">Docker &amp; Docker Compose</span>
+          <span class="skill-chip">Git &amp; GitHub Actions</span>
+          <span class="skill-chip">JWT Security &amp; Auth</span>
+          <span class="skill-chip">FAISS Vector Store</span>
+          <span class="skill-chip">Supabase</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     ABOUT & EDUCATION
+     ========================================================================== -->
+<section id="about">
+  <div class="container">
+    <div class="about-split-grid">
+      <!-- Bio -->
+      <div>
+        <div class="section-tag">Professional Background</div>
+        <h2 class="sec-title">From Management to <em>Defensive Security</em></h2>
+
+        <div class="bio-card" style="margin-top:1.5rem;">
+          <p class="bio-p">
+            I'm an <strong>MCA student at Gharda Institute of Technology &amp; Management</strong>, blending technical software engineering with rigorous security methodologies. My background in Management Studies (BMS) gave me an appreciation for risk management, operational continuity, and business impact.
+          </p>
+          <p class="bio-p">
+            Rather than staying theoretical, I build working systems: monitoring 60+ DNSBL blacklist feeds with <strong>AbuseBox</strong>, reverse-engineering malware behaviors in sandboxes, and orchestrating multi-API threat triage assistants with Google Gemini.
+          </p>
+          <p class="bio-p">
+            I am actively seeking an entry or associate role as a <strong>SOC Analyst (L1/L2)</strong>, <strong>Threat Intelligence Specialist</strong>, or <strong>Security Engineer</strong> where I can protect digital perimeters and accelerate incident response.
+          </p>
+
+          <div class="contact-quick-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-cyan);"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Based in Mumbai, Maharashtra, India · Available for On-Site or Remote Roles</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline & Education -->
+      <div>
+        <div class="section-tag">Education &amp; Credentials</div>
+        <h2 class="sec-title">Academic <em>Milestones</em></h2>
+
+        <div class="edu-timeline" style="margin-top:1.5rem;">
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-period">2025 — PURSUING</div>
+              <h4>Master of Computer Applications (MCA)</h4>
+              <p class="timeline-inst">Gharda Foundation's Gharda Institute of Technology &amp; Management, Maharashtra</p>
+              <p style="font-size:0.84rem; color:var(--text-tertiary);">Focus: Network Security, Information Systems, Distributed Systems, Algorithms.</p>
+            </div>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-period">2022 — 2024</div>
+              <h4>Bachelor of Management Studies (BMS)</h4>
+              <p class="timeline-inst">Devgad College, Maharashtra, India</p>
+              <div class="timeline-meta-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <span>Graduated with CGPA: 7.74</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="languages-box">
+          <h5>Languages &amp; Communication</h5>
+          <div class="lang-tags">
+            <span class="lang-tag"><b>English</b> (Professional Working)</span>
+            <span class="lang-tag"><b>Hindi</b> (Native / Fluent)</span>
+            <span class="lang-tag"><b>Marathi</b> (Native / Fluent)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CONTACT SECTION
+     ========================================================================== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-container-box">
+      <div class="contact-layout-grid">
+        <div>
+          <div class="section-tag">Direct Communication</div>
+          <h2 class="sec-title">Let's Discuss <em>Opportunities</em></h2>
+          <p class="sec-desc">
+            Whether you have an opening for a SOC Analyst, need a security engineer to build automated tooling, or want to discuss threat intelligence: my inbox is always open.
+          </p>
+
+          <div class="contact-info-list" style="margin-top:2rem;">
+            <div class="contact-method-card">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-details">
+                <div class="contact-lbl">Email Address</div>
+                <div class="contact-val">Omkarkharat456@gmail.com</div>
+              </div>
+              <button class="btn-copy" data-copy="Omkarkharat456@gmail.com" title="Copy email">Copy</button>
+            </div>
+
+            <div class="contact-method-card">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="contact-details">
+                <div class="contact-lbl">Direct Phone</div>
+                <div class="contact-val">+91 7517431081</div>
+              </div>
+              <button class="btn-copy" data-copy="+917517431081" title="Copy phone">Copy</button>
+            </div>
+
+            <div class="contact-method-card">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              </div>
+              <div class="contact-details">
+                <div class="contact-lbl">Professional LinkedIn</div>
+                <div class="contact-val">linkedin.com/in/omkar-kharat</div>
+              </div>
+              <a href="https://www.linkedin.com/in/omkar-kharat-07101b389" target="_blank" rel="noopener noreferrer" class="btn-copy">Visit</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div>
+          <form class="contact-form-clean" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="formName">Your Name</label>
+              <input type="text" id="formName" class="form-input" placeholder="e.g. Sarah Jenkins" required />
+            </div>
+
+            <div class="form-group">
+              <label for="formEmail">Email Address</label>
+              <input type="email" id="formEmail" class="form-input" placeholder="sarah@organization.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="formSubject">Subject / Role Opportunity</label>
+              <input type="text" id="formSubject" class="form-input" placeholder="SOC Analyst Opening / Interview Request" required />
+            </div>
+
+            <div class="form-group">
+              <label for="formMsg">Message</label>
+              <textarea id="formMsg" class="form-textarea" placeholder="Hi Omkar, I reviewed your AbuseBox project and would like to discuss..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="justify-content:center; width:100%;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span>Transmit Message via Mail Client</span>
+            </button>
+
+            <div class="form-status" id="formStatus" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>Omkar Chandrakant Kharat</h4>
+        <p>Cybersecurity Practitioner &amp; SOC Defense Engineer · Mumbai, India</p>
+      </div>
+
+      <div class="footer-social-links">
+        <a href="https://github.com/mc25103695-star" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="GitHub Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.9 5.33.9 11.6c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-1.94c-3.17.69-3.84-1.53-3.84-1.53-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.2-1.27-5.2-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 2.86-.38c.97 0 1.95.13 2.86.38 2.18-1.48 3.13-1.17 3.13-1.17.63 1.57.24 2.73.12 3.02.74.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.22 5.64.41.35.78 1.05.78 2.12v3.14c0 .3.2.66.79.55A11.1 11.1 0 0 0 23.1 11.6C23.1 5.33 18.27.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/omkar-kharat-07101b389" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="LinkedIn Profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a href="mailto:Omkarkharat456@gmail.com" class="social-circle-link" aria-label="Direct Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Omkar Chandrakant Kharat. Engineered for high-integrity security telemetry.</div>
+      <div style="font-family:var(--font-mono);">SHA256: 7f3b8e90a...ok_verified</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================================================
+     COMMAND PALETTE MODAL (⌘K)
+     ========================================================================== -->
+<div class="cmd-modal-backdrop" id="cmdModalBackdrop">
+  <div class="cmd-modal" role="dialog" aria-modal="true" aria-label="Command search palette">
+    <div class="cmd-input-bar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-cyan);"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="cmdSearchInput" placeholder="Jump to section, tool, or document..." autofocus />
+      <span class="kbd">ESC</span>
+    </div>
+
+    <div class="cmd-list" id="cmdResultsList">
+      <div class="cmd-item" data-action="navigate" data-target="#spotlight">
+        <span>Featured: AbuseBox (DNSBL Threat Monitor)</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="cmd-item" data-action="navigate" data-target="#lab">
+        <span>Test SOC Threat Investigation Console</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="cmd-item" data-action="navigate" data-target="#projects">
+        <span>View All 5 Projects &amp; Repositories</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+      <div class="cmd-item" data-action="download" data-url="assets/omkar-kharat-resume.pdf">
+        <span>Download Formal Resume (PDF)</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div class="cmd-item" data-action="copy" data-val="Omkarkharat456@gmail.com">
+        <span>Copy Email to Clipboard (Omkarkharat456@gmail.com)</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      </div>
+      <div class="cmd-item" data-action="external" data-url="https://github.com/mc25103695-star">
+        <span>Visit GitHub Profile (@mc25103695-star)</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </div>
+    </div>
+
+    <div class="cmd-footer">
+      <span>Use arrows to navigate</span>
+      <span>Press ENTER to select</span>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     SCRIPTS & INTERACTIVITY
+     ========================================================================== -->
+<script>
+(function() {
+  "use strict";
+
+  // Navbar scroll background change
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 30);
+  }, { passive: true });
+
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById("mobileToggle");
+  const navMenu = document.getElementById("navMenu");
+  if (mobileToggle) {
+    mobileToggle.addEventListener("click", () => {
+      const isVisible = navMenu.style.display === "flex";
+      navMenu.style.display = isVisible ? "none" : "flex";
+      if (!isVisible) {
+        navMenu.style.flexDirection = "column";
+        navMenu.style.position = "absolute";
+        navMenu.style.top = "var(--nav-h)";
+        navMenu.style.left = "0";
+        navMenu.style.right = "0";
+        navMenu.style.background = "#090d14";
+        navMenu.style.padding = "1.5rem";
+        navMenu.style.borderBottom = "1px solid var(--border-medium)";
+      }
+    });
+  }
+
+  // Project Category Filters
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-item");
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+
+      const filter = btn.getAttribute("data-filter");
+      projectCards.forEach(card => {
+        const cat = card.getAttribute("data-category") || "";
+        if (filter === "all" || cat.includes(filter)) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });
+
+  // SOC Lab Interactive Simulator Database
+  const sampleDatabase = {
+    "185.220.101.5": {
+      asn: "AS208294 (Zwiebelfreunde e.V.)",
+      geo: "Germany (DE) - Frankfurt",
+      confidence: "100% (2,410 reports)",
+      dnsblCount: "7 of 64 Providers Listed",
+      severity: "MALICIOUS // HIGH RISK",
+      severityClass: "severity-malicious",
+      narrative: "Target IP is an established Tor exit node observed conducting brute-force attempts and credential stuffing campaigns against SSH/HTTPS services. Recommended immediate SOC action: Apply perimeter firewall DROP rules and correlate against internal auth logs for session anomalies.",
+      dnsblList: [
+        { name: "zen.spamhaus.org", listed: true },
+        { name: "b.barracudacentral.org", listed: true },
+        { name: "bl.spamcop.net", listed: true },
+        { name: "dnsbl.sorbs.net", listed: true },
+        { name: "ips.backscatterer.org", listed: false },
+        { name: "cbl.abuseat.org", listed: true },
+        { name: "pbl.spamhaus.org", listed: true },
+        { name: "dnsbl-1.uceprotect.net", listed: true },
+        { name: "hostkarma.junkemailfilter.com", listed: false },
+        { name: "db.wpbl.info", listed: false }
+      ]
+    },
+    "45.143.200.12": {
+      asn: "AS48693 (Hostkey B.V.)",
+      geo: "Netherlands (NL) - Amsterdam",
+      confidence: "94% (482 reports)",
+      dnsblCount: "5 of 64 Providers Listed",
+      severity: "MALICIOUS // C2 BEACON",
+      severityClass: "severity-malicious",
+      narrative: "Identified CobaltStrike beacon staging server with recurring HTTP Malleable C2 profile signatures. Threat actors utilizing this node for stage-2 payload retrieval. SOC recommendation: Block egress TCP/443 & TCP/8080 connections to this CIDR and inspect host memory on affected endpoints.",
+      dnsblList: [
+        { name: "zen.spamhaus.org", listed: true },
+        { name: "b.barracudacentral.org", listed: true },
+        { name: "bl.spamcop.net", listed: true },
+        { name: "dnsbl.sorbs.net", listed: false },
+        { name: "ips.backscatterer.org", listed: false },
+        { name: "cbl.abuseat.org", listed: true },
+        { name: "pbl.spamhaus.org", listed: false },
+        { name: "dnsbl-1.uceprotect.net", listed: true },
+        { name: "hostkarma.junkemailfilter.com", listed: false },
+        { name: "db.wpbl.info", listed: false }
+      ]
+    },
+    "8.8.8.8": {
+      asn: "AS15169 (Google LLC)",
+      geo: "United States (US) - Mountain View",
+      confidence: "0% (No verified abuse)",
+      dnsblCount: "0 of 64 Providers (Clean)",
+      severity: "BENIGN // CLEAN RESOLVER",
+      severityClass: "severity-clean",
+      narrative: "Globally distributed Anycast public DNS resolver maintained by Google. No malicious beaconing or blacklist matches detected across 60+ reputation feeds. Standard baseline network traffic.",
+      dnsblList: [
+        { name: "zen.spamhaus.org", listed: false },
+        { name: "b.barracudacentral.org", listed: false },
+        { name: "bl.spamcop.net", listed: false },
+        { name: "dnsbl.sorbs.net", listed: false },
+        { name: "ips.backscatterer.org", listed: false },
+        { name: "cbl.abuseat.org", listed: false },
+        { name: "pbl.spamhaus.org", listed: false },
+        { name: "dnsbl-1.uceprotect.net", listed: false },
+        { name: "hostkarma.junkemailfilter.com", listed: false },
+        { name: "db.wpbl.info", listed: false }
+      ]
+    }
+  };
+
+  function updateDossier(ip) {
+    const data = sampleDatabase[ip] || {
+      asn: "AS-Dynamic (Public Network)",
+      geo: "Cloud Infrastructure",
+      confidence: "42% (Simulated Query)",
+      dnsblCount: "1 of 64 Providers Listed",
+      severity: "SUSPICIOUS // FURTHER AUDIT",
+      severityClass: "severity-suspicious",
+      narrative: `Telemetry inspection completed for ${ip}. Potential reconnaissance activity identified. Recommend inspecting internal proxy logs and validating SSL handshake certificates.`,
+      dnsblList: [
+        { name: "zen.spamhaus.org", listed: false },
+        { name: "b.barracudacentral.org", listed: false },
+        { name: "bl.spamcop.net", listed: true },
+        { name: "dnsbl.sorbs.net", listed: false },
+        { name: "ips.backscatterer.org", listed: false }
+      ]
+    };
+
+    document.getElementById("dossierTarget").textContent = ip;
+    const sevEl = document.getElementById("dossierSeverity");
+    sevEl.textContent = data.severity;
+    sevEl.className = "severity-pill " + data.severityClass;
+
+    document.getElementById("dossierAsn").textContent = data.asn;
+    document.getElementById("dossierGeo").textContent = data.geo;
+    document.getElementById("dossierConfidence").textContent = data.confidence;
+    document.getElementById("dossierDnsblCount").textContent = data.dnsblCount;
+    document.getElementById("dossierNarrative").textContent = data.narrative;
+
+    const feedList = document.getElementById("dnsblFeedList");
+    feedList.innerHTML = "";
+    data.dnsblList.forEach(item => {
+      const li = document.createElement("li");
+      li.className = "feed-item";
+      li.innerHTML = `<span>${item.name}</span><span class="${item.listed ? 'term-badge-bad' : 'term-badge-ok'}">${item.listed ? 'LISTED' : 'CLEAN'}</span>`;
+      feedList.appendChild(li);
+    });
+
+    const hitCount = data.dnsblList.filter(d => d.listed).length;
+    document.getElementById("feedSummary").textContent = `${hitCount} / ${data.dnsblList.length} HIT`;
+  }
+
+  const runScanBtn = document.getElementById("runScanBtn");
+  const iocInput = document.getElementById("iocInput");
+  if (runScanBtn && iocInput) {
+    runScanBtn.addEventListener("click", () => {
+      const val = iocInput.value.trim();
+      if (val) updateDossier(val);
+    });
+
+    iocInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        runScanBtn.click();
+      }
+    });
+  }
+
+  document.querySelectorAll(".preset-chip").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const ip = btn.getAttribute("data-ip");
+      if (iocInput) iocInput.value = ip;
+      updateDossier(ip);
+    });
+  });
+
+  // Copy to clipboard helper
+  document.querySelectorAll(".btn-copy").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const text = btn.getAttribute("data-copy");
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          const original = btn.textContent;
+          btn.textContent = "Copied!";
+          btn.style.color = "var(--accent-emerald)";
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.style.color = "";
+          }, 1800);
+        });
+      }
+    });
+  });
+
+  // Contact Form Mailto Handler
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("formName").value.trim();
+      const email = document.getElementById("formEmail").value.trim();
+      const subject = document.getElementById("formSubject").value.trim();
+      const msg = document.getElementById("formMsg").value.trim();
+
+      if (!name || !email || !msg) {
+        formStatus.textContent = "Please fill in all required fields.";
+        formStatus.className = "form-status error";
+        return;
+      }
+
+      const bodyContent = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${msg}`);
+      const mailtoUrl = `mailto:Omkarkharat456@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Inquiry')}&body=${bodyContent}`;
+      
+      window.location.href = mailtoUrl;
+      formStatus.textContent = "Launching email client... If it doesn't open automatically, contact Omkarkharat456@gmail.com.";
+      formStatus.className = "form-status success";
+    });
+  }
+
+  // Command Palette Logic
+  const cmdModalBackdrop = document.getElementById("cmdModalBackdrop");
+  const openCmdBtn = document.getElementById("openCmdBtn");
+  const cmdSearchInput = document.getElementById("cmdSearchInput");
+  const cmdResultsList = document.getElementById("cmdResultsList");
+
+  function openCmd() {
+    cmdModalBackdrop.classList.add("open");
+    cmdSearchInput.value = "";
+    cmdSearchInput.focus();
+    filterCmdItems("");
+  }
+
+  function closeCmd() {
+    cmdModalBackdrop.classList.remove("open");
+  }
+
+  if (openCmdBtn) openCmdBtn.addEventListener("click", openCmd);
+
+  window.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      cmdModalBackdrop.classList.contains("open") ? closeCmd() : openCmd();
+    }
+    if (e.key === "Escape" && cmdModalBackdrop.classList.contains("open")) {
+      closeCmd();
+    }
+  });
+
+  cmdModalBackdrop.addEventListener("click", (e) => {
+    if (e.target === cmdModalBackdrop) closeCmd();
+  });
+
+  function filterCmdItems(query) {
+    const q = query.toLowerCase();
+    const items = cmdResultsList.querySelectorAll(".cmd-item");
+    items.forEach(item => {
+      const txt = item.textContent.toLowerCase();
+      item.style.display = txt.includes(q) ? "flex" : "none";
+    });
+  }
+
+  if (cmdSearchInput) {
+    cmdSearchInput.addEventListener("input", (e) => {
+      filterCmdItems(e.target.value);
+    });
+  }
+
+  cmdResultsList.querySelectorAll(".cmd-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const action = item.getAttribute("data-action");
+      if (action === "navigate") {
+        const target = item.getAttribute("data-target");
+        closeCmd();
+        const el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      } else if (action === "download") {
+        const url = item.getAttribute("data-url");
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Omkar-Kharat-Resume.pdf";
+        a.click();
+        closeCmd();
+      } else if (action === "copy") {
+        const val = item.getAttribute("data-val");
+        navigator.clipboard.writeText(val);
+        closeCmd();
+      } else if (action === "external") {
+        const url = item.getAttribute("data-url");
+        window.open(url, "_blank");
+        closeCmd();
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
